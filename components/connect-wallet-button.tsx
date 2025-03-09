@@ -25,7 +25,7 @@ export function ConnectWalletButton({
 
   // Handle successful connection
   useEffect(() => {
-    if (isInitialized && authState.isAuthenticated && ethAddress) {
+    if (isInitialized && authState?.isAuthenticated && ethAddress) {
       if (onConnect) {
         onConnect(ethAddress, OCId)
       }
@@ -34,7 +34,7 @@ export function ConnectWalletButton({
         router.push(redirectPath)
       }
     }
-  }, [isInitialized, authState.isAuthenticated, ethAddress, OCId, onConnect, redirectAfterLogin, redirectPath, router])
+  }, [isInitialized, authState?.isAuthenticated, ethAddress, OCId, onConnect, redirectAfterLogin, redirectPath, router])
 
   const connectWallet = async () => {
     try {
@@ -65,7 +65,7 @@ export function ConnectWalletButton({
   }
 
   // If authenticated, show connected state
-  if (authState.isAuthenticated && ethAddress) {
+  if (authState?.isAuthenticated && ethAddress) {
     return (
       <div className="flex items-center justify-between rounded-md border p-2 w-full">
         <div className="flex items-center gap-2">
